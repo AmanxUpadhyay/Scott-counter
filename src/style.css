@@ -47,7 +47,7 @@ body::before {
     height: 50vw;
     top: calc(50vh - 25vw);
     left: calc(50vw - 25vw);
-    animation: animateBefore 7s cubic-bezier(0.47, 0, 0.745, 0.715) infinite;
+    animation: animateBefore 5s cubic-bezier(0.47, 0, 0.745, 0.715) infinite;
 }
 
 body::after {
@@ -56,7 +56,7 @@ body::after {
     height: 700px;
     top: calc(50vh - 350px);
     left: calc(50vw - 250px);
-    animation: animateAfter 7s cubic-bezier(0.47, 0, 0.745, 0.715) infinite;
+    animation: animateAfter 5s cubic-bezier(0.47, 0, 0.745, 0.715) infinite;
 }
 
 @keyframes animateBefore {
@@ -88,7 +88,6 @@ body::after {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 10vh 0 0 0;
     min-height: 100vh;
 }
 
@@ -123,12 +122,8 @@ body::after {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 2rem;
     margin-top: 2rem;
     border-radius: 10px;
-    padding: 0.5rem;
-    background-color: rgba(255, 255, 255, 0.20);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .time-segment {
@@ -138,12 +133,12 @@ body::after {
 
 .time-segment span {
     display: block;
-    font-size: 3rem;
+    font-size: 9.5rem;
     font-weight: bold;
 }
 
 .time-segment label {
-    font-size: 1rem;
+    font-size: 2.5rem;
     color: #454545;
 }
 
@@ -160,15 +155,11 @@ body::after {
         height: 500px;
     }
 
-    .main {
-        padding: 20vh 0 0 0;
+    .time-segment span  {
+        font-size: 7.5vh;
     }
 
-    .mainDiv {
-        font-size: 4.5vh;
-    }
-
-    .research {
+    .time-segment label {
         font-size: 2vh;
     }
 

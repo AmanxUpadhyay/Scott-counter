@@ -227,4 +227,4 @@
 
 
 // RUN
-$('#container').flipclock();
+$('#container').flipclock('2025-01-01 12:00:00');

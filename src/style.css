@@ -1,19 +1,88 @@
-:root {
-    --secondary-glow: conic-gradient(from 10deg at 50% 50%,
-            #eb7494 0deg,
-            #ae77b2 55deg,
-            #97b5da 120deg,
-            #0099ca 160deg,
-            transparent 360deg);
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-    --third-glow: conic-gradient(from 90deg at 50% 50%,
-            #ff8b7e 0deg,
-            #e24e6b 160deg,
-            #7ed2da 120deg,
-            #8bdce0 55deg,
-            transparent 360deg);
+:root {
+    --secondary-glow: conic-gradient(
+        from 10deg at 50% 50%,
+        #eb7494 0deg,
+        #ae77b2 55deg,
+        #97b5da 120deg,
+        #0099ca 160deg,
+        transparent 360deg
+    );
+
+    --third-glow: conic-gradient(
+        from 90deg at 50% 50%,
+        #ff8b7e 0deg,
+        #e24e6b 160deg,
+        #7ed2da 120deg,
+        #8bdce0 55deg,
+        transparent 360deg
+    );
 }
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    height: 100%;
+    font-optical-sizing: auto;
+    overflow: hidden;
+    position: relative;
+}
+
+body::before,
+body::after {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(90px);
+    z-index: -1;
+}
+
+body::before {
+    background: var(--third-glow);
+    width: 50vw;
+    height: 50vw;
+    top: calc(50vh - 25vw);
+    left: calc(50vw - 25vw);
+    animation: animateBefore 7s cubic-bezier(0.47, 0, 0.745, 0.715) infinite;
+}
+
+body::after {
+    background: var(--secondary-glow);
+    width: 500px;
+    height: 700px;
+    top: calc(50vh - 350px);
+    left: calc(50vw - 250px);
+    animation: animateAfter 7s cubic-bezier(0.47, 0, 0.745, 0.715) infinite;
+}
+
+@keyframes animateBefore {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(200px) scale(0.8);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes animateAfter {
+    0% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(-250px) scale(1.2);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
 
 .main {
     display: flex;
@@ -29,8 +98,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    font-family: 'Prospect';
-    font-size: 3rem;
+    font-size: 3.5rem;
 }
 
 .research {
@@ -40,7 +108,7 @@
     justify-content: flex-start;
     align-items: center;
     font-size: 1.5rem;
-    font-family: 'Helvetica';
+    font-family: "Poppins", sans-serif;
     padding: 0 1rem;
 }
 
@@ -50,5 +118,4 @@
     flex-direction: row;
     height: 50vh;
     width: 1px;
-
 }

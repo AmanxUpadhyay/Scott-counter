@@ -27,7 +27,7 @@
 }
 
 body, html {
-/*     height: 100%; */
+    height: 100%;
     overflow: hidden;
     position: relative;
 }
@@ -143,8 +143,8 @@ body::after {
 }
 
 img {
-    width: 90%;
-    height: auto;
+    width: auto;
+    height: 80vh;
 }
 
 /* Mobile Styles */

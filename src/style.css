@@ -1,23 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 :root {
-    --secondary-glow: conic-gradient(
-        from 10deg at 50% 50%,
-        #eb7494 0deg,
-        #ae77b2 55deg,
-        #97b5da 120deg,
-        #0099ca 160deg,
-        transparent 360deg
-    );
+    --secondary-glow: conic-gradient(from 10deg at 50% 50%,
+            #eb7494 0deg,
+            #ae77b2 55deg,
+            #97b5da 120deg,
+            #0099ca 160deg,
+            transparent 360deg);
 
-    --third-glow: conic-gradient(
-        from 90deg at 50% 50%,
-        #ff8b7e 0deg,
-        #e24e6b 160deg,
-        #7ed2da 120deg,
-        #8bdce0 55deg,
-        transparent 360deg
-    );
+    --third-glow: conic-gradient(from 90deg at 50% 50%,
+            #ff8b7e 0deg,
+            #e24e6b 160deg,
+            #7ed2da 120deg,
+            #8bdce0 55deg,
+            transparent 360deg);
 }
 
 * {
@@ -26,7 +22,8 @@
     box-sizing: border-box;
 }
 
-body, html {
+body,
+html {
     height: 100%;
     overflow: hidden;
     position: relative;
@@ -63,9 +60,11 @@ body::after {
     0% {
         transform: translateY(0);
     }
+
     50% {
         transform: translateY(200px) scale(0.8);
     }
+
     100% {
         transform: translateY(0);
     }
@@ -75,9 +74,11 @@ body::after {
     0% {
         transform: translateX(0);
     }
+
     50% {
         transform: translateX(-250px) scale(1.2);
     }
+
     100% {
         transform: translateX(0);
     }
@@ -143,12 +144,13 @@ body::after {
 }
 
 img {
-    width: auto;
-    height: 75vh;
+    width: 80%;
+    height: auto;
 }
 
 /* Mobile Styles */
 @media (max-width: 600px) {
+
     body::before,
     body::after {
         width: 70vw;
@@ -160,7 +162,7 @@ img {
         height: 500px;
     }
 
-    .time-segment span  {
+    .time-segment span {
         font-size: 7.5vh;
     }
 
@@ -170,5 +172,11 @@ img {
 
     .line {
         height: 10vh;
+    }
+
+
+    img {
+        width: 100%;
+        height: auto;
     }
 }

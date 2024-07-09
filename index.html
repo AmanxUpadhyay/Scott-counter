@@ -8,7 +8,7 @@
 </head>
 <body>
     <!-- Audio element for playing the song -->
-    <audio id="backgroundMusic" autoplay loop>
+    <audio id="backgroundMusic" autoplay loop muted>
         <source src="song.mp3" type="audio/mpeg">
         Your browser does not support the audio element.
     </audio>
@@ -34,9 +34,6 @@
                 <span id="seconds"></span>
                 <label><b>Seconds</b></label>
             </div>
-        </div>
-        <div id="audioPrompt" style="display: none;">
-            <button onclick="playAudio()">Play Background Music</button>
         </div>
     </div>
 
@@ -71,25 +68,12 @@
             }
         }, 1000);
 
-        // Function to play audio
-        function playAudio() {
+        // Play audio on user interaction
+        document.body.addEventListener('click', function() {
             var audio = document.getElementById('backgroundMusic');
+            audio.muted = false;
             audio.play();
-        }
-
-        // Attempt to autoplay audio when the page loads
-        window.onload = function() {
-            var audio = document.getElementById('backgroundMusic');
-            var playPromise = audio.play();
-
-            if (playPromise !== undefined) {
-                playPromise.catch(function(error) {
-                    // Autoplay was prevented
-                    // Show a button to let the user manually start playback
-                    document.getElementById('audioPrompt').style.display = 'block';
-                });
-            }
-        };
+        });
     </script>
 </body>
 </html>

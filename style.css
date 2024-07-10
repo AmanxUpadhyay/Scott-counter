@@ -1,0 +1,242 @@
+/* Importing Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+:root {
+    --secondary-glow: conic-gradient(from 10deg at 50% 50%, #eb7494 0deg, #ae77b2 55deg, #97b5da 120deg, #0099ca 160deg, transparent 360deg);
+    --third-glow: conic-gradient(from 90deg at 50% 50%, #ff8b7e 0deg, #e24e6b 160deg, #7ed2da 120deg, #8bdce0 55deg, transparent 360deg);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body,
+html {
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+    font-family: 'Montserrat', sans-serif;
+    color: rgb(60, 50, 50);
+}
+
+body::before,
+body::after {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(90px);
+    z-index: -1;
+}
+
+body::before {
+    background: var(--third-glow);
+    width: 50vw;
+    height: 50vw;
+    top: calc(50vh - 25vw);
+    left: calc(50vw - 25vw);
+    animation: animateBefore 5s cubic-bezier(0.47, 0, 0.745, 0.715) infinite;
+}
+
+body::after {
+    background: var(--secondary-glow);
+    width: 500px;
+    height: 700px;
+    top: calc(50vh - 350px);
+    left: calc(50vw - 250px);
+    animation: animateAfter 5s cubic-bezier(0.47, 0, 0.745, 0.715) infinite;
+}
+
+@keyframes animateBefore {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(200px) scale(0.8);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes animateAfter {
+    0% {
+        transform: translateX(0);
+    }
+
+    50% {
+        transform: translateX(-250px) scale(1.2);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+    text-align: center;
+}
+
+.mainDiv {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 5.9vh;
+}
+
+.research {
+    margin: 2rem 0;
+    border-radius: 3vh;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-size: 2vh;
+    padding: 0 1rem;
+}
+
+.line {
+    background-color: black;
+    width: 1px;
+}
+
+.timer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.time-segment {
+    margin: 0 10px;
+    text-align: center;
+}
+
+.time-segment span {
+    display: block;
+    font-size: 9.5rem;
+    font-weight: bold;
+}
+
+.time-segment label {
+    font-size: 2.5rem;
+    color: #454545;
+}
+
+img {
+    width: 80%;
+    height: auto;
+}
+
+/* Mobile Styles */
+@media (max-width: 800px) {
+    body::before,
+    body::after {
+        width: 70vw;
+        height: 70vw;
+    }
+
+    body::after {
+        width: 300px;
+        height: 500px;
+    }
+
+    .time-segment span {
+        font-size: 7.5vh;
+    }
+
+    .time-segment label {
+        font-size: 1.5vh; /* Adjusted font size for mobile */
+    }
+
+    .line {
+        height: 10vh;
+    }
+
+    img {
+        width: 100%;
+        height: auto;
+    }
+
+    .mainDiv {
+        font-size: 4vh;
+    }
+
+    .research {
+        font-size: 1.5vh;
+        padding: 0 0.5rem;
+    }
+
+    .timer {
+        flex-direction: column;
+    }
+}
+
+.glitch {
+    font-size: 2.5rem;
+    font-weight: bold;
+    position: relative;
+    text-shadow: 0.05em 0 0 #00fffc, -0.03em -0.04em 0 #fc00ff, 0.025em 0.04em 0 #fffc00;
+    animation: glitch 725ms infinite;
+}
+
+.glitch span {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.glitch span:first-child {
+    animation: glitch 500ms infinite;
+    clip-path: polygon(0 0, 100% 0, 100% 35%, 0 35%);
+    transform: translate(-0.04em, -0.03em);
+    opacity: 0.75;
+}
+
+.glitch span:last-child {
+    animation: glitch 375ms infinite;
+    clip-path: polygon(0 65%, 100% 65%, 100% 100%, 0 100%);
+    transform: translate(0.04em, 0.03em);
+    opacity: 0.75;
+}
+
+@keyframes glitch {
+    0% {
+        text-shadow: 0.05em 0 0 #00fffc, -0.03em -0.04em 0 #fc00ff, 0.025em 0.04em 0 #fffc00;
+    }
+
+    15% {
+        text-shadow: 0.05em 0 0 #00fffc, -0.03em -0.04em 0 #fc00ff, 0.025em 0.04em 0 #fffc00;
+    }
+
+    16% {
+        text-shadow: -0.05em -0.025em 0 #00fffc, 0.025em 0.035em 0 #fc00ff, -0.05em -0.05em 0 #fffc00;
+    }
+
+    49% {
+        text-shadow: -0.05em -0.025em 0 #00fffc, 0.025em 0.035em 0 #fc00ff, -0.05em -0.05em 0 #fffc00;
+    }
+
+    50% {
+        text-shadow: 0.05em 0.035em 0 #00fffc, 0.03em 0 0 #fc00ff, 0 -0.04em 0 #fffc00;
+    }
+
+    99% {
+        text-shadow: 0.05em 0.035em 0 #00fffc, 0.03em 0 0 #fc00ff, 0 -0.04em 0 #fffc00;
+    }
+
+    100% {
+        text-shadow: -0.05em 0 0 #00fffc, -0.025em -0.04em 0 #fc00ff, -0.04em -0.025em 0 #fffc00;
+    }
+}

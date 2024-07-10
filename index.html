@@ -5,15 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" media="screen" href="./src/style.css" />
     <title>Countdown</title>
-    <style>
-        /* Style for the custom message */
-        .custom-message {
-            text-align: center;
-            font-size: 24px;
-            font-weight: bold;
-            margin-bottom: 20px;
-        }
-    </style>
 </head>
 <body>
     <!-- Audio element for playing the song -->
@@ -23,13 +14,13 @@
     </audio>
 
     <div class="main">
-        <!-- Custom message -->
-        <div class="custom-message">
-            There Must Have Been A Glitch...
-        </div>
+        <!-- Commented out the image to prevent it from displaying -->
+        <!-- <img src="IMG_9512.gif" alt="Expect The Unexpected"> -->
 
-        <!-- Countdown timer -->
         <div class="timer" id="countdown">
+            <!-- Initial hidden image -->
+            <img id="countdownImage" src="IMG_9512.gif" alt="Expect The Unexpected" style="display: none;">
+
             <div class="time-segment">
                 <span id="days"></span>
                 <label><b>Days</b></label>
@@ -73,10 +64,17 @@
             document.getElementById("minutes").innerHTML = minutes;
             document.getElementById("seconds").innerHTML = seconds;
 
-            // If the count down is finished, write some text
+            // If the count down is finished, display the image
             if (distance < 0) {
                 clearInterval(x);
-                document.getElementById("countdown").innerHTML = "FIN?";
+                // Hide countdown elements
+                document.getElementById("countdown").style.display = 'none';
+                // Display the image
+                document.getElementById("countdownImage").style.display = 'block';
+
+                // Optionally, stop the audio
+                var audio = document.getElementById('WhatComesNext');
+                audio.pause();
             }
         }, 1000);
 

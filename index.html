@@ -13,31 +13,19 @@
             font-weight: bold;
             margin-bottom: 20px;
         }
-
-        /* Keyframes for shaking animation */
-        @keyframes shake {
-            0% { transform: translate(0, 0); }
-            10%, 30%, 50%, 70%, 90% { transform: translate(-5px, 5px); }
-            20%, 40%, 60%, 80%, 100% { transform: translate(5px, -5px); }
-        }
-
-        /* Apply shaking animation to countdown */
-        .glitch {
-            animation: shake 0.5s infinite;
-        }
     </style>
 </head>
 <body>
     <!-- Audio element for playing the song -->
     <audio id="WhatComesNext" autoplay loop muted>
-        <source src="song.mp3" type="audio/mpeg">
+        <source src="SongTwo.mp3" type="audio/mpeg">
         Your browser does not support the audio element.
     </audio>
 
     <div class="main">
         <!-- Custom message -->
         <div class="custom-message">
-            Get Ready for Something Amazing!
+            There Must Have Been A Glitch...
         </div>
 
         <!-- Countdown timer -->
@@ -85,13 +73,10 @@
             document.getElementById("minutes").innerHTML = minutes;
             document.getElementById("seconds").innerHTML = seconds;
 
-            // If the count down is finished, write some text and add glitch effect
+            // If the count down is finished, write some text
             if (distance < 0) {
                 clearInterval(x);
                 document.getElementById("countdown").innerHTML = "FIN?";
-                document.getElementById("countdown").classList.add("glitch");
-            } else {
-                document.getElementById("countdown").classList.remove("glitch");
             }
         }, 1000);
 

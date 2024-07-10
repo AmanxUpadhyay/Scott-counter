@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" media="screen" href="./src/style.css" />
-    <title>?</title>
+    <link rel="stylesheet" type="text/css" media="screen" href="./src/glitch.css" />
+    <title>GL1TCH</title>
 </head>
 <body>
     <!-- Audio element for playing the song -->
@@ -14,9 +15,12 @@
     </audio>
 
     <div class="main">
-        <!-- Commented out the image to prevent it from displaying -->
-        <!-- <img src="IMG_9512.gif" alt="Expect The Unexpected"> -->
+        <!-- Custom message -->
+        <div class="custom-message">
+            There Must Have Been A Glitch...
+        </div>
 
+        <!-- Countdown timer -->
         <div class="timer" id="countdown">
             <div class="time-segment">
                 <span id="days"></span>
@@ -61,10 +65,13 @@
             document.getElementById("minutes").innerHTML = minutes;
             document.getElementById("seconds").innerHTML = seconds;
 
-            // If the count down is finished, write some text
+            // If the count down is finished, write some text and add glitch effect
             if (distance < 0) {
                 clearInterval(x);
                 document.getElementById("countdown").innerHTML = "FIN?";
+                document.getElementById("countdown").classList.add("glitch");
+            } else {
+                document.getElementById("countdown").classList.remove("glitch");
             }
         }, 1000);
 
